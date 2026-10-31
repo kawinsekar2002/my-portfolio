@@ -1,0 +1,185 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  background-color: #020914;
+
+  width: 100%;
+  margin: 0;
+  padding: 15px;
+  
+  box-sizing: border-box;
+.download-resume {
+  background-color: #41cdcd;
+  color: black;
+  border: 1px solid #41cdcd;
+  transition: all 0.3s ease;
+  font-size: 22px;
+  border-radius: 6px;
+  height: 40px;
+  width: 230px;
+  display: flex;
+  margin-right: 5px;
+  align-items: center;
+  gap: 4px;
+
+  animation: resumeGlow 2s ease-in-out infinite;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+
+    box-shadow:
+      0 0 10px #41cdcd,
+      0 0 25px rgba(0, 255, 255, 0.7),
+      0 0 45px rgba(0, 255, 255, 0.4);
+  }
+}
+  .logo {
+    flex-shrink: 0;
+    margin-left: 10px;
+
+    img {
+      width: 70px;
+      height: 60px;
+    }
+  }
+
+  h1 {
+    flex-shrink: 0;
+    margin: 0;
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: 34px;
+    color: white;
+  }
+
+  .nav-buttons {
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    white-space: nowrap;
+
+    button:not(.download-resume)  {
+      position: relative;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 22px;
+      margin: 0;
+      padding: 8px 0;
+      white-space: nowrap;
+      transition: color 0.3s ease;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #41cdcd;
+        transition: width 0.4s ease;
+      }
+
+      &:hover {
+        color: #41cdcd;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@keyframes resumeGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 5px rgba(0, 255, 255, 0.35),
+      0 0 12px rgba(0, 255, 255, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 0 10px rgba(0, 255, 255, 0.7),
+      0 0 25px rgba(0, 255, 255, 0.5),
+      0 0 40px rgba(0, 255, 255, 0.25);
+  }
+}
+
+/* =========================
+   HIDE MOBILE NAV BY DEFAULT
+   ========================= */
+
+.mobile-menu-button,
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* Hide desktop navigation */
+  .header .nav-buttons {
+    display: none;
+  }
+
+  /* Show mobile icon */
+  .header .mobile-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  /* Mobile menu */
+  .header .mobile-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    flex-direction: column;
+    padding: 100px 25px 30px;
+    background: rgba(20, 20, 20, 0.95);
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 1001;
+    gap: 10px;
+  }
+
+  /* Open mobile menu */
+  .header .mobile-menu.active {
+    transform: translateX(0);
+  }
+
+  /* Mobile buttons */
+  .header .mobile-menu button {
+    width: 100%;
+    padding: 14px 18px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 17px;
+    text-align: left;
+    cursor: pointer;
+  }
+}

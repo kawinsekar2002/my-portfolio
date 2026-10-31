@@ -1,0 +1,379 @@
+.skills {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 0px 7%;
+  box-sizing: border-box;
+
+  background: #061321;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.skills-container {
+  width: 100%;
+  max-width: 1250px;
+
+  padding: 50px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(0, 255, 255, 0.45);
+  border-radius: 25px;
+
+  background: rgba(2, 9, 20, 0.55);
+
+  box-shadow:
+    0 0 25px rgba(0, 255, 255, 0.08),
+    inset 0 0 25px rgba(0, 255, 255, 0.03);
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.skills-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 55px;
+}
+
+
+.skills-heading span {
+  color: #00ffff;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  text-shadow:
+    0 0 8px rgba(0, 255, 255, 0.7);
+}
+
+
+.skills-heading h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 42px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   SKILLS GRID
+========================= */
+
+.skills-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(150px, 1fr));
+
+  gap: 28px;
+}
+
+
+/* =========================
+   SKILL CARD
+========================= */
+
+.skill-card {
+  min-height: 160px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  border: 1px solid rgba(0, 255, 255, 0.3);
+
+  border-radius: 18px;
+
+  background: rgba(5, 20, 35, 0.7);
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  animation: floating 4s ease-in-out infinite;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* =========================
+   FLOATING ANIMATION
+========================= */
+
+@keyframes floating {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.skill-card:hover {
+
+  animation-play-state: paused;
+
+  transform: scale(1.10) translateY(-5px);
+
+  border-color: #00ffff;
+
+  background: rgba(5, 30, 45, 0.9);
+
+  box-shadow:
+    0 0 15px rgba(0, 255, 255, 0.35),
+    0 0 35px rgba(0, 255, 255, 0.12);
+}
+
+
+.skill-icon {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 52px;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+
+.skill-card:hover .skill-icon {
+
+  transform: scale(1.15);
+
+  filter:
+    drop-shadow(0 0 8px rgba(0, 255, 255, 0.45));
+}
+
+
+.skill-card h3 {
+
+  margin: 0;
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.skill-card:hover h3 {
+  color: #00ffff;
+}
+
+
+/* =========================
+   TECHNOLOGY ICON COLORS
+========================= */
+
+.node .skill-icon {
+  color: #68a063;
+}
+
+.react .skill-icon {
+  color: #61dafb;
+}
+
+.express .skill-icon {
+  color: white;
+}
+
+.mongodb .skill-icon {
+  color: #47a248;
+}
+
+.javascript .skill-icon {
+  color: #f7df1e;
+}
+
+.html .skill-icon {
+  color: #e34f26;
+}
+
+.css .skill-icon {
+  color: #1572b6;
+}
+
+.java .skill-icon {
+  color: #f89820;
+}
+
+.mysql .skill-icon {
+  color: #00758f;
+}
+
+.git .skill-icon {
+  color: #f05032;
+}
+
+.github .skill-icon {
+  color: white;
+}
+
+.angular .skill-icon {
+  color: #dd0031;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .skills {
+    padding: 0px 5%;
+  }
+
+  .skills-container {
+    padding: 10px;
+  }
+
+  .skills-grid {
+    grid-template-columns:
+      repeat(3, minmax(140px, 1fr));
+
+    gap: 22px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .skills {
+    min-height: auto;
+
+    padding: 70px 20px;
+  }
+
+
+  .skills-container {
+    padding: 30px 20px;
+
+    border-radius: 20px;
+  }
+
+
+  .skills-heading {
+    margin-bottom: 35px;
+  }
+
+
+  .skills-heading span {
+    font-size: 22px;
+  }
+
+
+  .skills-heading h1 {
+    font-size: 32px;
+  }
+
+
+  .skills-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+  }
+
+
+  .skill-card {
+    min-height: 135px;
+
+    border-radius: 15px;
+  }
+
+
+  .skill-icon {
+    font-size: 42px;
+  }
+
+
+  .skill-card h3 {
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .skills {
+    padding-left: 12px;
+    padding-right: 12px;
+     padding: 10px 5px;
+  }
+
+
+  .skills-container {
+    padding: 25px 15px;
+  }
+
+
+  .skills-grid {
+    gap: 12px;
+  }
+
+
+  .skill-card {
+    min-height: 125px;
+  }
+
+}
