@@ -54,15 +54,15 @@ const Header = () => {
         </button>
 
         <button
-          className="download-resume"
-          onClick={() => {
-            setMenuOpen(false)
-            window.open('/resume.pdf', '_blank')
-          }}
-        >
-          <Download size={22} />
-          Download Resume
-        </button>
+  className="download-resume"
+  onClick={() => {
+    setMenuOpen(false)
+    window.open(`${import.meta.env.BASE_URL}resume.pdf`, '_blank')
+  }}
+>
+  <Download size={22} />
+  Download Resume
+</button>
       </div>
 
       {/* Mobile Menu Icon */}
