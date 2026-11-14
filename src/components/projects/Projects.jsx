@@ -22,6 +22,43 @@ const Projects = () => {
 
   const projects = [
     {
+  title: 'S&J Clothing Process Management System',
+
+  type: 'Work Project',
+
+  description:
+    'Developed a full-stack Clothing Production Management System using React, Node.js, Express.js, and MongoDB to manage and track the complete production workflow from order intake to dispatch. Built dynamic React forms and data tables to manage customer orders, inventory stages, and production milestones, with RESTful APIs and role-based access control for efficient workflow management.',
+
+  technologies: [
+    {
+      name: 'React',
+      icon: <FaReact />
+    },
+    {
+      name: 'Node.js',
+      icon: <FaNodeJs />
+    },
+    {
+      name: 'Express.js',
+      icon: <SiExpress />
+    },
+    {
+      name: 'MongoDB',
+      icon: <SiMongodb />
+    }
+  ],
+
+  features: [
+    'End-to-end clothing production workflow tracking',
+    'Customer order management from intake to dispatch',
+    'Dynamic React forms and data tables',
+    'Inventory stage and production milestone tracking',
+    'RESTful APIs for CRUD operations',
+    'Role-based access control',
+    'MongoDB integration for data storage, filtering and reporting'
+  ]
+},
+    {
       title: 'TVS Campaign Management System',
 
       type: 'Work Project',

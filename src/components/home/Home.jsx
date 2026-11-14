@@ -63,7 +63,7 @@ const Home = () => {
   </div>
     <div className="circle"></div>
     <div className="home-image">
-      <img src="/kawin_r.png" alt="Kawin" />
+      <img src={`${import.meta.env.BASE_URL}kawin_r.png`} alt="Kawin" />
     </div>
   </div>
 </div>

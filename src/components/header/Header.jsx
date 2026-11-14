@@ -26,7 +26,7 @@ const Header = () => {
 
       {/* Logo */}
       <div className="logo">
-        <img src="/rk_logo_animation.gif" alt="RK Logo" />
+        <img src={`${import.meta.env.BASE_URL}rk_logo_animation.gif`} alt="RK Logo" />
       </div>
 
       <h1>Kawin R</h1>
